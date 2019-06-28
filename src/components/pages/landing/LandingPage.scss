@@ -1,0 +1,111 @@
+@import '../../../base.scss';
+
+.content {
+    padding: 20px 14px;
+}
+
+.panel {
+    background-color: white;
+    margin: -4px -14px 18px;
+    padding: 14px 14px;
+    border-top: 1px solid $border_grey;
+    border-bottom: 1px solid $border_grey;
+}
+
+.cards {
+    margin-top: 34px;
+}
+
+.first_card {
+    margin-top: 12px;
+}
+
+.hue_box {
+    position: relative;
+    display: block;
+    background-image: linear-gradient(to top, #e36f5b, #de4d55);
+    background-image: url('../../../assets/orange-hue.png');
+    border: 1px solid #ed612b;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100px; */
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    padding: 36px 12px;
+    margin: -20px -14px;
+}
+
+.other_cards {
+    margin-top: 12px;
+}
+
+@media (min-width: 992px) { 
+    // Large devices (desktops, 992px and up)
+    .title {
+        margin: 20px 0;
+
+        > h3 {
+            font-size: 30px;
+            font-weight: 100;
+        }
+    }
+
+    .panel {
+        border: none;
+        margin-bottom: 0;
+    }
+
+    .hue_box {
+        position: relative;
+        display: block;
+        // background-image: url('../../../assets/orange-hue.png');
+        background-image: linear-gradient(to top, rgb(227, 111, 91), rgb(222, 77, 85));
+        border: 1px solid #ed612b;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100px;
+        text-align: center;
+        font-size: 36px;
+        color: white;
+
+        padding-top: 47px;
+    }
+
+    .first_card {
+        margin-bottom: 36px;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .cards {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 36px;
+
+        position: relative;
+        border-radius: 5px;
+
+        .other_cards {
+            a {
+                display: inline-block;
+                width: calc(50% - 57px);
+            
+                &:nth-child(odd) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px) { 
+    .cards {
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 2*76px);
+    }
+}

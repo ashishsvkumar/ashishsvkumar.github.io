@@ -1,0 +1,96 @@
+@import './base.scss';
+
+:global(#rm-cs-app) {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $almost_white;
+    margin-bottom: -40px;
+    padding-bottom: 40px;
+}
+
+:global(#lzd-global-header .title-wrap h1) {
+    margin-bottom: -2px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+:global(.modal-open) {
+    overflow: hidden;
+    position: fixed;
+}
+
+.sidebar { 
+    display: none;
+}
+
+@media (min-width: 576px) { 
+    // Small devices (landscape phones, 576px and up)
+}
+
+@media (min-width: 768px) { 
+    // Medium devices (tablets, 768px and up)
+}
+
+@media (min-width: 992px) { 
+    :global(#rm-cs-app) {
+        min-height: auto;
+        background-color: white;
+    }
+
+    .main_content {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .app {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+
+@media (min-width: 1200px) { 
+
+    // Large devices (desktops, 992px and up)
+    .app {
+        min-height: 70vh;
+        background-color: white;
+
+        padding-top: 20px;
+        padding-bottom: 70px;
+    }
+
+    .sidebar {
+        float: left;
+        margin-right: 20px;
+        display: block;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .main_content {
+        float: left;
+        width: calc(100% - 290px); 
+
+        &.full_width {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 1600px) { 
+
+    :global(#rm-cs-app) {
+        background-color: white;
+    }
+
+
+    .app {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

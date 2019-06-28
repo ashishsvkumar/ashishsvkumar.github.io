@@ -1,0 +1,100 @@
+@import '../../../base.scss';
+
+.content {
+    background-color: white;
+    margin-top: 12px;
+
+    padding: 0 12px 20px;
+    color: $almost_black;
+    font-size: 14px;
+}
+
+.text, .details {
+    -webkit-appearance: none;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid $border_grey;
+    border-radius: 2px;
+    display: block;
+    width: calc(100% - 24px);
+    font-size: 14px;
+    padding: 12px;
+    outline: none;
+
+    &:focus, &:active {
+        border-color: #999;
+    }
+
+    &.warn {
+        border-color: rgba(230, 20, 20, 0.4);
+
+        &:focus, &:active {
+            border-color: rgba(230, 20, 20, 1);
+        }
+    }
+}
+
+.contact {
+    margin-top: 30px;
+    margin-left: -12px;
+    margin-right: -12px;
+
+    > div {
+        border-top: 1px solid $almost_white;
+
+        > div {
+            margin-top: 0;
+        }
+    }
+}
+
+.details {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.label {
+    margin-bottom: 12px;
+
+    &:not(:first-child) {
+        margin-top: 18px;
+    }
+}
+
+.submit {
+    margin-top: 15px;
+}
+
+@media (min-width: 992px) { 
+    .content {
+        padding: 0 40% 0 0;
+    }
+
+    .title {
+        font-size: 36px;
+        color: #202020;
+        margin-bottom: 40px;
+    }
+
+    .label {
+        color: #4a4a4a;
+
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+
+    .text, .details {
+        border-color: #979797;
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .contact {
+        > div {
+            border-top: none;
+            > div {
+                margin-top: 20px;
+            }
+        }
+    }
+}

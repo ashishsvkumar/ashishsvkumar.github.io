@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="//laz-img-cdn.alicdn.com/tfs/TB1f5qJef6H8KJjy0FjXXaXepXa-16-16.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <title>Test Page</title>
+    <!-- Es5-shim -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+    <script src="//unpkg.com/cross-fetch/dist/cross-fetch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+
+    <!-- Lazada MTOP Setup -->
+    <script src="//laz-g-cdn.alicdn.com/mtb/??3rd/0.0.10/require.js,lib-promise/3.0.1/polyfillB.js,lib-mtop/2.4.5/mtop.js,lib-mtop/1.6.3/middleware.js,lib-windvane/2.1.8/windvane.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+
+      button {
+        margin: 10px auto 40px;
+      }
+
+      pre {
+        border: 1px solid #ddd;
+        text-align: left;
+        font-family: consolas, monospace;
+        font-size: 12px;
+
+        margin-bottom: 100px;
+      }
+
+      #thumbnail {
+        width: 500px;
+        height: 500px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        margin: 40px auto 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="thumbnail"></div>
+    <button onclick="triggerWindwaneFile();">Select file</button>
+
+    <br><br>
+    <pre id="response"></pre>
+
+
+    <script type="text/javascript">
+      const windvane = window.lib.windvane;
+
+      function showToast(message, duration) {
+          if (windvane.isAvailable) {
+            windvane.call('WVUIToast', 'toast', { message, duration });
+          } else {
+            alert(message);
+          }
+      }
+
+      function triggerWindwaneFile() {
+        var param = {
+            type: '1',
+            v: '2.0',
+            mode: 'both',
+            bizCode: 'lazada-im-sg',
+            needBase64: true
+        };
+
+        setBackground(null);
+        document.getElementById('response').innerText = '';
+        
+        windvane.call('WVCamera', 'takePhoto', param).then(response => {
+            
+            windvane.call('Base', 'copyToClipboard', { text: JSON.stringify(response, null, '\t') });
+            showToast('User has selected a file', 30);
+            document.getElementById('response').innerText = JSON.stringify(response, null, '\t');
+
+            var url;
+            if (response.base64Data.indexOf('/9j/') === 0) {
+              url = 'data:image/jpg;base64,' + response.base64Data;
+            } else {
+               url = 'data:image/png;base64,' + response.base64Data;
+            }
+
+            setBackground(response.url);
+
+        }).catch(err => {
+
+            showToast('Something went wrong in "takePhoto" call', 30);
+            setBackground('https://via.placeholder.com/500x500.png?text=No+Image+Selected');
+
+            document.getElementById('response').innerText = JSON.stringify(err, null, '\t');
+        });
+      }
+
+      function setBackground(url) {
+        //showToast(('Showing background to' + 'url(' + url + ')').substring(0, 200));
+        document.getElementById('thumbnail').style.backgroundImage = 'url(' + url + ')';
+      }
+
+    </script>
+  </body>
+</html>

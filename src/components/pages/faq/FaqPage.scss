@@ -1,0 +1,61 @@
+@import '../../../base.scss';
+
+.content {
+    padding: 12px 0;
+    min-height: 80vh;
+}
+
+.body {
+    background-color: white;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: $almost_black;
+    line-height: 1.6rem;
+
+    border-top: 1px solid $border_grey;
+    border-bottom: 1px solid $border_grey;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+a {
+    color: #dc4f59;
+    text-decoration: none;
+
+    &:visited {
+        color: #dc4f59;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid $lz_orange_darker;
+    text-align: center;
+    vertical-align: top;
+}
+
+th, td, tr {
+    padding: 3px;
+    border: 1px solid $lz_orange_lighter;
+    font-size: 12px;
+}
+
+@media (min-width: 992px) { 
+    .body {
+        border: none;
+        padding: 0;
+
+        font-size: 15px;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 50px;
+        font-size: 36px;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,128 @@
+@import '../../../base.scss';
+
+.content {
+    background-color: white;
+}
+
+.label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.thumbnails {
+
+    margin-bottom: 10px;
+
+    .thumbnail {
+        float: left;
+        position: relative;
+        box-shadow: 1px 1px 3px #999;
+        border-radius: 2px;
+        margin-bottom: 12px;
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: calc(50% - 4px);
+        margin-right: 8px;
+        height: 100px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+
+    .remove_icon {
+        position: absolute;
+        background-color: $almost_black;
+        border-radius: 50%;
+        top: 4px;
+        right: 4px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 34px;
+        background-image: url('../../../assets/cancel-fff.png');
+
+        &:hover, &:active {
+            background-image: url('../../../assets/cancel-333.png');
+            background-color: white;
+        }
+    }
+}
+
+.progress_bar {
+    position: absolute;
+    bottom: 0;
+    top: calc(100% - 4px);
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+
+    .meter {
+        position: absolute;
+        background-color: $grape_fruit;
+
+        bottom: 0;
+        top: calc(100% - 4px);
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+
+        transition: all 0.5s;
+    }
+}
+
+.upload_error {
+    position: absolute;
+    border-radius: 2px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+    
+    color: #f08c6a;
+    text-align: center;
+    padding: 18%;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+}
+
+@media (min-width: 992px) { 
+
+    .thumbnails {
+    
+        .thumbnail {
+            width: 160px;
+            height: 160px;
+
+            margin-bottom: 16px;
+            margin-right: 16px;
+
+            &:last-child {
+                margin-bottom: 16px;
+            }
+    
+            &:nth-child(even) {
+                margin-right: 16px;
+            }
+        }
+    }
+}

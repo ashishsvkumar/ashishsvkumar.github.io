@@ -1,0 +1,55 @@
+@import '../../../base.scss';
+
+.desktop_title {
+    display: none;
+}
+
+.order_summary {
+    border-top: 1px solid $border_grey;
+    border-bottom: 1px solid $border_grey;
+    background-color: white;
+
+    > div > div, > div > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.body {
+    margin-top: 12px;
+    margin-bottom: 40px;
+    border-top: 1px solid $border_grey;
+    border-bottom: 1px solid $border_grey;
+}
+
+@media (min-width: 992px) { 
+    .desktop_title {
+        display: block;
+        font-size: 36px;
+        color: #202020;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    .order_summary {
+        border-top: none;
+        border-bottom: none;
+        margin-bottom: 20px;
+
+        > div > div, > div > a {
+            background-color: $almost_white;
+            border-radius: 5px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-color: transparent;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .body {
+        border-bottom: none;
+    }
+}

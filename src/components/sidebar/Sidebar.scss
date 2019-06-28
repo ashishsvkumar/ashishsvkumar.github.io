@@ -1,0 +1,35 @@
+@import '../../base.scss';
+
+.content {
+    padding: 0;
+    width: 270px;
+    background-color: white;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 14px 14px 14px 0;
+    margin-bottom: 10px;
+}
+
+.link {
+    font-size: 16px;
+    color: #212121;
+    cursor: pointer;
+    display: block;
+    padding: 14px;
+
+    &:active, &:visited {
+        color: #212121;
+    }
+
+    &:hover {
+        background-color: #f3f3f3;
+    }
+}
+
+.highlighted {
+    font-weight: bold;
+    background-color: $almost_white;
+}

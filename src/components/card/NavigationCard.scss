@@ -1,0 +1,85 @@
+@import '../../base.scss';
+
+.content {
+    display: block;
+    background-color: white;
+    padding: 19px 12px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 1px 1px 2px $grey;
+    }
+
+    &:active {
+        box-shadow: inset 0 0 1px $grey;
+    }
+
+    &.card {
+        border-radius: 3px;
+        border: 1px solid $border_grey;
+    
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &.strip {
+        border-top: 1px solid $border_grey;
+        border-bottom: 1px solid $border_grey;
+    
+        margin-bottom: -1px;
+        &::last-child {
+            border-top: none;
+            margin-bottom: auto;
+        }
+    }
+}
+
+.text {
+    float: left;
+    font-size: 16px;
+    color: $almost_black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 40px);
+}
+
+.arrow {
+    float: right;
+    margin-top: 2px;
+}
+
+.loginButton {
+    float: right;
+    margin-top: 1px;
+    margin-right: 8px;
+
+    font-style: italic;
+    font-size: 14px;
+    color: $grape_fruit;
+}
+
+@media (min-width: 992px) { 
+    .arrow {
+        transform: scale(1.5);
+    }
+
+    .content {
+        padding: 22px 25px 21px 20px;
+
+        &.card {
+            border-color: #dadada;
+        }
+        
+        &.strip {
+            border-color: #dadada;
+        }
+    }
+
+    .text {
+        color: #424242;
+        font-weight: 400;
+        font-size: 14px;
+    }
+}

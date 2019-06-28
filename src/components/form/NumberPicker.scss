@@ -1,0 +1,78 @@
+@import '../../base.scss';
+
+.content {
+    color: #353535;
+    font-size: 14px;
+
+    background-color: white;
+    padding: 8px 0 8px 2px;
+}
+
+.label {
+    padding-top: 4px;
+}
+
+.picker {
+    margin-top: 10px;
+}
+
+.btn, .value {
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    height: 24px;
+    min-width: 28px;
+    vertical-align: middle;
+}
+
+.value {
+    font-size: 14px;
+    padding: 0 4px;
+    vertical-align: bottom;
+    background-color: $almost_white;
+    border-top: 1px solid $border_grey;
+    border-bottom: 1px solid $border_grey;
+
+    > div {
+        margin-top: 3px;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    border: 1px solid $border_grey;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px;
+    background-image: url('../../assets/plus-333.png');
+
+    &:active {
+        box-shadow: inset 1px 1px 2px #ddd;
+    }
+
+    &.decr {
+        background-image: url('../../assets/minus-333.png');
+    }
+
+    &.disabled {
+        background-image: url('../../assets/plus-dadada.png');
+    
+        &.decr {
+            background-image: url('../../assets/minus-dadada.png');
+        }
+    }
+}
+
+@media (min-width: 992px) { 
+    .btn, .value {
+        border-color: #bdbdbd;
+        height: 28px;
+        min-width: 36px;
+    }
+    .value {
+        font-size: 15px;
+        > div {
+            margin-top: 6px;
+        }
+    }
+}

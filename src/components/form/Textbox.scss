@@ -1,0 +1,31 @@
+@import '../../base.scss';
+
+.textbox {
+    font-family: inherit;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid $border_grey;
+    font-size: 13px;
+    height: 40px;
+    padding: 0;
+    box-shadow: none;
+    margin: 0;
+    box-sizing: border-box;
+    text-indent: 16px;
+    -webkit-appearance: none;
+
+    outline: none;
+
+    &:focus, &:active {
+        outline: none;
+    }
+}
+
+@media (min-width: 992px) { 
+    .textbox {
+        border-radius: 5px;
+        border-color: #bdbdbd;
+
+        height: 45px;
+    }
+}

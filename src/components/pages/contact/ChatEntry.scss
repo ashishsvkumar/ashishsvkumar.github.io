@@ -1,0 +1,208 @@
+@import '../../../base.scss';
+
+.container {
+    font-size: 12px;
+    color: $almost_black;
+}
+
+.content {
+    background-color: white;
+    border-top: 1px solid $border_grey;
+    border-bottom: 1px solid $border_grey;
+
+    padding: 14px 12px;
+    margin-bottom: 12px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.cards {
+    margin: 15px auto 6px;
+}
+
+.card {
+    display: inline-block;
+    border: 1px solid $border_grey;
+    border-radius: 2px;
+    cursor: pointer;
+
+    font-size: 13px;
+    padding: 12px 12px;
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 28px);
+
+    &:hover {
+        box-shadow: 1px 1px 2px #ddd;
+    }
+
+    &:active {
+        box-shadow: inset 1px 1px 2px #ddd;
+    }
+}
+
+.card_title {
+    font-size: 15px;
+    color: #1A9CB7;
+}
+
+.card_subtitle {
+    color: $brownish_grey;
+    margin-top: 8px;
+}
+
+.others {
+    padding: 0 4px;
+
+    > span:first-child {
+        padding-right: 8px;
+    }
+    .link_back {
+        color: #1A9CB7;
+        text-transform: uppercase;
+        font-size: 12px;
+
+        &:hover {
+            text-shadow: 1px 1px 1px #eee;
+        }
+
+        &:visited, &:active {
+            color: #1A9CB7;
+        }
+    }
+}
+
+b {
+    font-weight: 400;
+    color: $almost_black;
+}
+
+.center {
+    position: absolute;
+    padding-top: 4px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin-left: -6px;
+}
+
+.btn {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: 1px solid #ec472a;
+    text-align: center;
+
+    height: 48px;
+    color: #ec472a;
+    margin: 20px 0 10px;
+
+    &:hover {
+        box-shadow: 1px 1px 2px #ddd;
+    }
+
+    &:active {
+        box-shadow: inset 1px 1px 2px #ddd;
+    }
+}
+
+.icon {
+    float: left;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    margin-top: -2px;
+    background-image: url('../../../assets/chat-medium.png');
+}
+
+.btn_text {
+    float: left;
+    font-size: 14px;
+}
+
+.timings {
+    color: #666666;
+    text-align: center;
+}
+
+.more {
+    cursor: pointer;
+    color: $grape_fruit;
+
+    &:hover {
+        text-shadow: 1px 1px 1px #eee;
+    }
+}
+
+
+@media (min-width: 992px) {  
+    .container {
+        padding-top: 8px;
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+
+    .content {
+        border-top: 0;
+        border-bottom: 0;
+
+        padding: 20px 15px;
+        margin-top: 18px;
+    }
+
+    .cards {
+        margin: 15px auto 12px 0;
+        max-width: 847px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        border-color: #dadada;
+        margin-right: 12px;
+        padding: 14px 16px 12px 14px;
+        align-items: stretch;
+        width: calc(50% - 44px);
+
+        &:nth-child(odd) {
+            margin-left: 0;
+        }
+    }
+
+    .card_title {
+        font-size: 15px;
+    }
+
+    .card_subtitle {
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 200px;
+    }
+
+    .timings {
+        text-align: left;
+    }
+}
+
+
+@media (min-width: 1200px) { 
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .content {
+        padding: 20px 0;
+        margin-top: 0;
+    }
+}

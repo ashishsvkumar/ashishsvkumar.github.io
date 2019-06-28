@@ -1,0 +1,46 @@
+language: node_js
+node_js:
+- 10.14.1
+branches:
+  except:
+  - "/^[0-9]/"
+env:
+  matrix:
+  global:
+addons:
+  hosts:
+  - 127.0.0.1 sonarqube.service.redmart.com
+before_install:
+- nvm install 10.14.1
+- nvm install 0.10.33
+install:
+- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
+- nvm use 10.14.1
+- npm install
+- nvm use 0.10.33
+- npm install -g grunt@0.4.1 grunt-cli@0.1.9
+before_script:
+- echo -n $id_rsa_{a..z} >> ~/.ssh/id_rsa_base64
+- base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+- export CHEF_PK=`echo -n $CHEF_KEY | base64 --decode --ignore-garbage`
+- chmod 600 ~/.ssh/id_rsa
+- cd ci/;
+- '/usr/bin/curl --header "Authorization: token $GITHUB_TOKEN" --header "Accept: application/vnd.github.v3.raw"
+  --remote-name --location https://api.github.com/repos/redmart/bourdain/contents/scripts/build-scripts/rm_sync_scripts.sh'
+- chmod +x rm_sync_scripts.sh ; ./rm_sync_scripts.sh ; cd ../
+script:
+- nvm use 0.10.33
+- cd ci/; npm install; chmod +x rm_version_mgr.sh ; ./rm_version_mgr.sh ; cd ../
+- nvm use 10.14.1
+- chmod +x build_app.sh ; ./build_app.sh npm
+after_success:
+- nvm use 0.10.33
+- cd ci/; npm run start ; cd ../
+- cd ci/; chmod +x rm_deploy.sh ; ./rm_deploy.sh ; cd ../
+- cd ci/; chmod +x rm_release.sh ; ./rm_release.sh ; cd ../
+after_failure:
+- echo "ERROR ********* Travis build failed. Please check the travis logs for details.
+  **********"
+notifications:
+  email:
+    on_success: never

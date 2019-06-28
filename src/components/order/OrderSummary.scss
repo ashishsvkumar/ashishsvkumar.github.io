@@ -1,0 +1,379 @@
+@import '../../base.scss';
+
+.content {
+    display: block;
+    background-color: white;
+    padding: 18px 12px;
+
+    margin-bottom: 10px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.arrow_2 {
+    display: none;
+}
+
+.help {
+    cursor: default;
+    span {
+        color: #3e92b2;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.card {
+    border-radius: 2px;
+    border: 1px solid $border_grey;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 1px 1px 2px $grey;
+    }
+
+    &:active {
+        box-shadow: inset 0 0 1px $grey;
+    }
+}
+
+.subcard {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.pack {
+    background-color: white;
+    padding: 0;
+
+    .recent {
+        color: $light_grey;
+        font-size: 12px;
+    }
+
+    .all_orders {
+        display: block;
+        border-top: 1px solid $border_grey;
+        padding: 18px 12px;  
+
+        .arrow, .help {
+            float: left;
+        }
+        
+        .help {
+            font-size: 14px;
+            color: $brownish_grey;
+            margin-right: 3px;
+            margin-top: -1px; 
+        }
+    }
+}
+
+.status {
+    float: right;
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.slot {
+    font-size: 13px;
+    .time {
+        float: left;
+        color: $almost_black;
+        font-weight: bold;
+
+        max-width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        direction: rtl;
+    }
+}
+
+.help_btn {
+    color: $grape_fruit;
+    border: 1px solid $grape_fruit;
+    text-align: center;
+    padding: 7px 15px;
+    border-radius: 2px;
+    float: right;
+    margin-top: 4px;
+    font-size: 12px;
+    box-shadow: 0 1px #ddd;
+}
+
+.thumbnails {
+    margin-top: 14px;
+
+    .thumbail_holder, .thumbail {
+        position: relative;
+    
+        border-radius: 4px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+
+        margin-left: 4px;
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:nth-child(3) {
+            display: none;
+        }
+
+        &.fodder {
+            background-color: transparent;
+            background-image: none;
+        }
+    }
+
+    .count_holder {
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .count {
+        color: white;
+
+        text-align: center;
+        font-size: 16px;
+        font-weight: 300;
+        padding-top: 10px;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+    }
+
+    .thumbail_holder {
+        background-image: url('https://img.alicdn.com/tfs/TB13yWDDMHqK1RjSZJnXXbNLpXa-240-240.png');
+        float: left;
+
+        &:nth-child(5) {
+            display: none;
+        }
+    }
+
+    .thumbail {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    &.greyscale .thumbail {
+        filter: grayscale(1)
+    }
+
+    .arrow, .help, .arrow_2 {
+        float: right; 
+    
+        /* We are intentionally not use translateY here. IE support is not good and we know the height of all elements involved. */
+        margin-top: 24px;
+    }
+    
+    .help {
+        font-size: 14px;
+        color: $grape_fruit;
+        margin-right: 3px;
+        margin-top: 23px;
+        margin-top: 10px;
+    }
+}
+
+.actions {
+    font-size: 14px;
+    padding: 18px 12px;
+
+    .action {
+        color: #3e92b2;
+        display: block;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        > div {
+            display: inline-block;
+            margin-right: 2px;
+
+            &:last-child {
+                margin-top: -1px;
+            }
+        }
+    }
+}
+
+@media (min-width: 330px) { 
+    .thumbnails {
+        .thumbail_holder, .thumbail {
+            margin-left: 10px;
+
+            &:nth-child(3) {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width: 400px) { 
+    .thumbnails {
+        .thumbail_holder, .thumbail {
+            margin-left: 16px;
+        }
+    }
+}
+
+@media (min-width: 992px) { 
+
+    .actions {
+        float: right;
+        padding-top: 6px;
+        padding-bottom: 6px;
+
+        a {
+            > div:last-child {
+                float: none;
+            }
+        }
+    }
+
+    .help_btn {
+        border-color: #1a9cb7;
+        color: #1a9cb7;
+        text-transform: uppercase;
+        font-size: 14px;
+        padding: 12px 15px 10px;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    .card {
+        border-radius: 5px;
+        border-color: #dadada;
+    }
+
+    .subcard {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .slot {
+        float: left;
+        margin-top: 13px;
+        margin-left: 8px;
+        font-size: 14px;
+        width: 220px;
+        width: 245px;
+
+        .time {
+            font-weight: 400;
+            color: #212121;
+        }
+    }
+
+    .status {
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: 14px;
+        float: left;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .thumbnails {
+        margin-top: 0;
+        float: right;
+        min-width: calc(100% - 300px);
+        margin-right: 8px;
+
+        .thumbail_holder, .thumbail {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+
+            &:nth-child(4) {
+                display: block;
+            }
+        }
+
+        .help {
+            margin-top: 11px; 
+            margin-right: 8px;
+        }
+
+        .arrow, .arrow_2 {
+            margin-top: 13px;
+            transform: scale(1.5);
+        }
+    }
+
+    .pack {
+        .recent {
+            color: #212121;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 17px 12px 17px;
+        }
+        .content {
+            background-color: $almost_white;
+            margin-bottom: 0;
+        }
+        .all_orders {
+            position: relative;
+            text-align: center;
+            .help, .arrow_2 {
+                display: inline-block;
+                float: none;
+                font-weight: 300;
+            }
+            .arrow {
+                display: none;
+            }
+            .help {
+                color: #0094b6;
+            }
+            .arrow_2 {
+                transform: scale(1.5);
+                vertical-align: text-top;
+                margin-left: 4px;
+            }
+        }
+    }
+
+    .thumbail {
+        .arrow {
+            transform: scale(1.5);
+        }
+    }
+}
+
+@media (min-width: 1200px) { 
+    .status {
+        margin-left: 30x;
+    }
+}
+
+@media (min-width: 1400px) { 
+    .status {
+        margin-left: 50px;
+    }
+}

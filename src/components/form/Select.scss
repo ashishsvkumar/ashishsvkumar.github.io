@@ -1,0 +1,127 @@
+@import '../../base.scss';
+
+.container {
+    position: relative;
+}
+
+.container input[type="text"].readonly {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    padding-right: 55px;
+}
+
+.container input[type="text"].dropdown_open {
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid $border_grey;
+}
+
+.container input[type="text"].dropup_open {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.clear {
+    position: absolute;
+    font-size: 20px;
+    font-weight: lighter;
+    opacity: 0.8;
+    color: #9b9b9b;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.clear:hover {
+    opacity: 1;
+}
+
+
+.caret_icon {
+    position: absolute;
+    top: 23%;
+    right: 12px;
+    cursor: pointer;
+    pointer-events: none;
+    transition: transform 0.1s linear;
+
+    .caret {
+        content: "";
+        display: inline-block;
+        position: relative;
+    }
+
+    &.flip {
+        top: 41%;
+        transform: rotate(-180deg);
+    }
+}
+
+.dropdown_menu {
+    border: 1px solid $border_grey;
+    border-top: none;
+    box-shadow: 0 1px 2px 0 #dddddd;
+    position: absolute;
+    z-index: 1;
+    top: 42px;
+    left: 0;
+    right: 0;
+    margin-top: -3px;
+    overflow: auto;
+    background-color: #f5f5f5;
+    display: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.dropdown_menu.dropup {
+    border-top: 1px solid $border_grey;
+    border-bottom: none;
+    top: auto;
+    bottom: 43px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 0 2px 0 #dddddd;
+}
+
+.dropdown_menu.open {
+    display: block;
+}
+
+.dropdown_menu .option {
+    padding: 8px 15px;
+    cursor: pointer;
+    color: black;
+    font-size: 13px;
+}
+
+.dropdown_menu .highlighted {
+    background-color: #eee;
+}
+
+.dropdown_menu.striped .option:not(.highlighted):nth-child(even) {
+    background-color: #fafafa;
+}
+
+@media (min-width: 992px) { 
+    .dropdown_menu {
+        border-color: #bdbdbd;
+        top: 45px;
+    }
+
+    .caret_icon {
+        top: calc(27% + 1px);
+
+
+        &.flip {
+            top: calc(41% + 1px);
+        }
+    }
+}

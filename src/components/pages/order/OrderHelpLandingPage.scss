@@ -1,0 +1,112 @@
+@import '../../../base.scss';
+
+.panel {
+    background-color: white;
+    margin: 0 0 12px;
+    padding: 14px 14px;
+    border-top: 1px solid $border_grey;
+    border-bottom: 1px solid $border_grey;
+
+    .title {
+        font-size: 16px;
+        color: $almost_black;
+        margin-bottom: 12px;
+
+        > div {
+            display: inline-block;
+
+            &:last-child {
+                vertical-align: middle;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    .icon {
+        background-position: center;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+        
+        &.faq_icon {
+            background-image: url('../../../assets/faq-icon.png');
+        }
+
+        &.cta_icon {
+            background-image: url('../../../assets/refund-icon.png');
+        }
+    }
+
+    &.highlighted a {
+        > div {
+            color: #3e92b2;
+        }
+        margin-top: 8px;
+    }
+}
+
+
+@media (min-width: 992px) { 
+    .panel {
+        border: none;
+        padding: 16px 0;
+
+        > div.only_desktop {
+            width: calc(50% - 8px);
+            display: inline-block;
+            margin-right: 16px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .title {
+            > div {
+                &:last-child {
+                    padding-bottom: 4px;
+                }
+            }
+        }
+
+        .icon {
+            background-size: 20px;
+            width: 24px;
+            height: 24px;
+        }
+
+        &:not(.highlighted) {
+
+            > div.only_desktop {
+                border: none;
+                display: block;
+                width: auto;
+                padding: 0;
+
+                > a {
+                    border: none;
+                    opacity: 0.9;
+                    padding: 8px 0;
+                    font-size: 18px;
+
+                    > div:nth-child(2) {
+                        display: none;
+                    }
+
+                    &:hover {
+                        box-shadow: none;
+                        opacity: 0.95;
+                    }
+
+                    &:active, &:focus {
+                        opacity: 1;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

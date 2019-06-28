@@ -1,0 +1,29 @@
+{
+    "extends": [
+        "tslint-config-airbnb",
+        "tslint:latest",
+        "tslint-react",
+        "tslint-config-prettier"
+    ],
+    "rules": {
+        "no-submodule-imports": false,
+        "object-literal-sort-keys": false,
+        "no-implicit-dependencies": [
+            true,
+            "dev"
+        ],
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "ban-types": [
+            false,
+            "Function"
+        ]
+    },
+    "linterOptions": {
+        "exclude": [
+            "src/middleware/logger.ts"
+        ]
+    }
+}

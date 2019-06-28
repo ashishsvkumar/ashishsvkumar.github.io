@@ -1,0 +1,65 @@
+@import '../../base.scss';
+
+.content {
+    padding: 4px;
+}
+
+.thumbnail, .thumbnail_holder {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 60px;
+    height: 60px;
+}
+
+.thumbnail_holder {
+    position: relative;
+    background-image: url('https://img.alicdn.com/tfs/TB13yWDDMHqK1RjSZJnXXbNLpXa-240-240.png');
+    float: left;
+    z-index: 1;
+}
+
+.thumbnail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 2;
+}
+
+
+.body {
+    float: left;
+    width: calc(100% - 60px - 12px);
+    margin-left: 10px;
+    font-size: 14px;
+    color: $almost_black;
+}
+
+.name {
+    margin-bottom: 8px;
+}
+
+.price {
+    font-weight: 500;
+    color: $brownish_grey;
+}
+
+@media (min-width: 992px) { 
+    .body {
+        font-size: 15px;
+        width: auto;
+    }
+
+    .name {
+        margin-bottom: 16px;
+    }
+
+
+    .thumbnail, .thumbnail_holder {
+        width: 65px;
+        height: 65px;
+    }
+}

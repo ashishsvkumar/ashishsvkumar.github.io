@@ -1,0 +1,15 @@
+@import '../../base.scss';
+
+.checkbox {
+    border-radius: 50%;
+    border: 1px solid $border_grey;
+    text-align: center;
+
+    &.checked {
+        background-image: url('../../assets/selected-large.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-color: #ec482a;
+    }
+}

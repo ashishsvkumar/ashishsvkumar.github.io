@@ -1,0 +1,16 @@
+@import '../../../base.scss';
+
+.content {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+
+    padding: 40px;
+
+    color: $almost_black;
+
+    > div:first-child {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}

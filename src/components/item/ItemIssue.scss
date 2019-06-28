@@ -1,0 +1,100 @@
+@import '../../base.scss';
+
+.content {
+    padding: 0;
+    border: 1px solid $border_grey;
+    margin-bottom: 16px;
+}
+
+.body {
+    background-color: white;
+    padding: 8px;
+
+    .preview {
+        float: left;
+        max-width: calc(100% - 30px);
+    }
+
+    .btn {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/cross-large.png');
+        width: 28px;
+        height: 28px;
+
+        float: right;
+        font-size: 16px;
+        margin-top: -2px;
+        user-select: none;
+        cursor: pointer;
+
+        opacity: 0.6;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:active {
+            opacity: 1;
+        }
+    }
+}
+
+.form {
+    padding: 0 12px 0 83px;
+    background-color: white;
+}
+
+.select_container {
+    padding-top: 8px;
+    border-top: 1px solid $border_grey;
+
+    .select_label {
+        color: #353535;
+        font-size: 14px;
+        margin: 8px auto 10px;
+    }
+}
+
+.picker {
+    background-color: white;
+    padding: 4px 0;
+
+    &:first-child {
+        border-top: 1px solid $border_grey;
+    }
+}
+
+@media (min-width: 992px) { 
+    .content {
+        border-color: #dadada;
+    }
+
+    .body {
+        padding: 20px 20px 0 24px;
+    }
+
+    .form {
+        padding-left: 104px;
+    }
+
+    .select_container, .picker {
+        border-top: 1px solid #dadada;
+        float: left; 
+        margin-bottom: 16px;
+        width: calc(50% - 31px);
+    }
+
+    .select_container {
+        padding-right: 50px;
+    }
+
+    .picker {
+
+        &:first-child {
+            border-color: #dadada;
+            width: calc(100% - 13px);
+        }
+    }
+}
